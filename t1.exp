@@ -1,6 +1,6 @@
 #!/usr/bin/expect
 
-# Testing Stack push
+# Testing Stack push 10
 set timeout 1
 
 spawn ./data_structure
