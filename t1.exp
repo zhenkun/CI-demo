@@ -1,0 +1,41 @@
+#!/usr/bin/expect
+
+# Testing Stack push
+set timeout 1
+
+spawn ./data_structure
+
+expect {
+    timeout { exit 1 }
+    "*Enter choice: " {
+        send "1\n"
+        expect {
+            timeout { exit 1 }
+            "Push*" {
+                send "1\n"
+                expect {
+                    timeout { exit 1 }
+                    "*Enter data : " {
+                        send "10\n"
+                        expect {
+                            timeout { exit 1 }
+                            "*\n*Enter choice*" {
+                                send "6\n"
+                                expect {
+                                    timeout { exit 1 }
+                                    "10*" {
+                                        send "5\n"
+                                        puts "test passed"
+                                        exit 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+exit 1
