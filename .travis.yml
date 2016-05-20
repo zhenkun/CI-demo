@@ -3,6 +3,10 @@ compiler:
   - gcc
   - clang
 script: make && make test
+
+# need to install the Boost libraries to the sandbox
+before_script:
+  - sudo apt-get install expect
 notifications:
   email:
     recipients: zhenkun.y@gmail.com
